@@ -1,0 +1,13 @@
+# Data / large files
+datasets/
+
+# Documentation
+docs/
+
+# Scripts (if sensitive/large)
+scripts/
+
+# Other common ignores
+*.bak
+.vscode/settings.json
+.DS_Store
