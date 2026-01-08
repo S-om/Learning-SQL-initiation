@@ -11,3 +11,20 @@ CREATE TABLE persons (
 
 
 SELECT * FROM persons
+
+-- Add a new column called email to the persons table 
+ALTER TABLE persons 
+ADD email VARCHAR(50) NOT NULl
+
+
+SELECT * FROM persons
+
+
+-- Remove the column phone from the persons table 
+
+ALTER TABLE persons 
+DROP COLUMN phone 
+
+-- Delete the table persons from the database
+
+DROP TABLE persons
