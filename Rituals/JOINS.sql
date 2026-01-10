@@ -135,7 +135,7 @@ FROM customers AS c
 FULL JOIN orders AS o
 ON c.id = o.customer_id
 WHERE c.id IS NULL OR o.customer_id IS NULL
-
+--
 -- Bonus 
 
 -- Get all customers along with their orders but only for customers who have placed an order 
