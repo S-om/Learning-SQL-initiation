@@ -163,3 +163,5 @@ WHERE o.customer_id IS NOT NULL
 SELECT *
 FROM customers
 CROSS JOIN orders
+
+
