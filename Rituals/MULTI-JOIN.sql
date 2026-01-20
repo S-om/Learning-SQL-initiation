@@ -1,6 +1,7 @@
 -- MULTI JOINS 
 
 -- Using the SalesDb , Retrieve a list of all orders  along with the related customer , 
+USE SalesDB -- Given so that errors dont show in Vscode , no significance
 
 SELECT * FROM Sales.Customers ; 
 SELECT * FROM Sales.Employees ;
@@ -15,8 +16,6 @@ SELECT
     sp.Price,
     CONCAT_WS(' ',se.FirstName,se.LastName) AS SalesPersonName,
     se.Gender
-    
-
 FROM Sales.Orders AS so 
 LEFT JOIN Sales.Customers as sc
 ON so.CustomerID = sc.CustomerID

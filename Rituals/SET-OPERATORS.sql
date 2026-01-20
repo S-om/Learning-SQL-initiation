@@ -109,9 +109,52 @@ SELECT * FROM Sales.OrdersArchive
 
 
 SELECT 
-*
+    'Orders' AS SourceTable
+    ,[OrderID]
+    ,[ProductID]
+    ,[CustomerID]
+    ,[SalesPersonID]
+    ,[OrderDate]
+    ,[ShipDate]
+    ,[OrderStatus]
+    ,[ShipAddress]
+    ,[BillAddress]
+    ,[Quantity]
+    ,[Sales]
+    ,[CreationTime]
 FROM Sales.Orders
 UNION
 SELECT 
-*
+    'OrdersArchive' AS SourceTable
+    ,[OrderID]
+    ,[ProductID]
+    ,[CustomerID]
+    ,[SalesPersonID]
+    ,[OrderDate]
+    ,[ShipDate]
+    ,[OrderStatus]
+    ,[ShipAddress]
+    ,[BillAddress]
+    ,[Quantity]
+    ,[Sales]
+    ,[CreationTime]
 FROM Sales.OrdersArchive
+ORDER BY OrderID
+
+
+
+/* DELTA DETECTION
+- Identifying the differences or changes (delta) between two batches of data.
+- We use EXCEPT to do this 
+
+
+- DATA COMPLETENESS CHECK 
+- EXCEPT operator an be used to compare tables to detect discripancies between databases
+
+*/
+
+SELECT FirstName , LastName FROM Sales.Employees
+EXCEPT
+SELECT FirstName , LastName FROM Sales.Customers
+
+

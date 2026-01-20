@@ -139,7 +139,7 @@ WHERE c.id IS NULL OR o.customer_id IS NULL
 -- Bonus 
 
 -- Get all customers along with their orders but only for customers who have placed an order 
--- Without using and INNER JOIN
+-- Without using INNER JOIN
 
 SELECT *
 FROM customers AS c 

@@ -9,8 +9,14 @@ CREATE TABLE persons (
 
 )
 
+USE MyDatabase -- Given so that errors dont show in Vscode , no significance
+
+
+
 SELECT *
 FROM customers
+
+
 -- Adding a single customer 
 INSERT INTO customers (id ,first_name , country , score)
 VALUES (6 , 'Somesh' , 'India' , 650)
