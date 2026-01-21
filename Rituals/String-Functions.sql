@@ -28,7 +28,7 @@ SELECT
     CONCAT(firstName ,' ',lastName) AS fullName
 FROM pp 
 
-
+USE SalesDB
 SELECT 
     CONCAT(FirstName , ' ' , Country) AS name_country
  FROM Sales.Customers
@@ -45,7 +45,7 @@ SELECT
     UPPER(LastName) AS upper_name
 FROM Sales.Customers
 
-
+USE MyDatabase
 -- TRIM 
 
 SELECT
@@ -62,9 +62,57 @@ SELECT
     LEN(TRIM(first_name)) AS len_trimmed_name
 FROM customers
 
-
+-- REPLACE
 
 SELECT 
     '123-456-7890' ,
     REPLACE('123-456-7890' , '-' , '') AS replaced_number
 
+
+SELECT 
+'report.txt',
+REPLACE('report.txt' , '.txt','.csv')
+
+
+-- Count the length of each customers length 
+
+SELECT
+    first_name,
+    LEN(first_name) AS len_name
+FROM customers
+ 
+SELECT
+    LEFT(TRIM(first_name) , 2) AS left_two_elements,
+    RIGHT(TRIM(first_name) , 2) AS right_two_elements
+FROM customers
+
+
+
+-- Retrive a customers first name after removing the first character.
+
+SELECT 
+    first_name,
+    SUBSTRING(TRIM(first_name) , 2 , LEN(TRIM(first_name))) removed_char
+FROM customers
+
+
+
+-- Number Functions
+
+SELECT ROUND(3.156 , 1)
+
+
+SELECT ABS(-10)
+
+
+USE SalesDB
+SELECT ABS(Sales) Sales FROM Sales.Orders
+
+
+
+SELECT 
+    OrderID,
+    OrderDate,
+    ShipDate,
+    CreationTime
+FROM Sales.Orders
