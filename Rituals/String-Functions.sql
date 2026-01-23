@@ -110,9 +110,3 @@ SELECT ABS(Sales) Sales FROM Sales.Orders
 
 
 
-SELECT 
-    OrderID,
-    OrderDate,
-    ShipDate,
-    CreationTime
-FROM Sales.Orders
